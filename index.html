@@ -25,7 +25,7 @@
 <header role="banner">
 	<h1>APIDOC</h1>
 	<h2>RESTful web APIs的注释文档</h2>
-	<p>apiDoc从你的源码的API描述的创建文档</p>
+	<p>apiDoc从你的源码的API描述里创建文档</p>
 	<div class="pull-left span8">
 	
 		<div id="exampleTab">          
@@ -226,7 +226,7 @@ This is a comment.
 			<thead>
 			<tr>
 				<th>Parameter</th>
-				<th>Description</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -245,7 +245,7 @@ This is a comment.
 				<td>
 					Input / source dirname. Location of your project files.<br>
 					<br>
-					Example:<br>
+					例子:<br>
 					<code>apidoc -i myapp/</code>
 				</td>
 			</tr>
@@ -255,7 +255,7 @@ This is a comment.
 				<td>
 					Output dirname. Location where to put to generated documentation.<br>
 					<br>
-					Example:<br>
+					例子:<br>
 					<code>apidoc -o apidoc/</code>
 				</td>
 			</tr>
@@ -265,7 +265,7 @@ This is a comment.
 				<td>
 					Use template for output files. You can create and use your own template.<br>
 					<br>
-					Example:<br>
+					例子:<br>
 					<code>apidoc -t mytemplate/</code>
 				</td>
 			</tr>
@@ -307,7 +307,7 @@ This is a comment.
 	<article id="extend">
 		<h2>扩展</h2>
 		<p>apiDoc can be extended with own parameters (if you miss something). Look at the <code>lib/plugins/</code> dir for examples. <code>parser</code> split the parameter data, <code>worker</code> processes additional functions with all found data and <code>filter</code> reduce the data to needed things.</p>
-		<p>Example usage: <code>apidoc --parse-filters myFilter=pathToMyFilter/myFilter.js</code></p>
+		<p>Example 用法: <code>apidoc --parse-filters myFilter=pathToMyFilter/myFilter.js</code></p>
 		<p>Or easier: <a href="https://github.com/apidoc/apidoc">fork</a> the whole project ;-)</p>
 	</article>
 </section>
@@ -368,7 +368,7 @@ This is a comment.
 		<p>A documentation block starts with <code>/**</code> and end with <code>*/</code>.</p>
 		<p>This example describes a <code>GET</code> Method to request the User Information by the users <code>id</code>.</p>
 		<p><code>@api {get} /user/:id Request User information</code> is required, without <code>@api</code> apiDoc ignores a documentation block.</p>
-		<p><code>@apiName</code> is a <code>unique</code> name and should always be used.<br>
+		<p><code>@apiName</code> is a <code>unique</code> name and 应始终使用.<br>
 		Format: <i>method</i> + <i>path</i> (e.g. Get + User)</p> 
 		<p><code>@apiGroup</code> should always be used, under that name will this method be grouped.</p>
 		<p>All other fields are optional, look at their description under <a href="#params">apiDoc-Params</a>.</p>
@@ -386,7 +386,7 @@ This is a comment.
 		<pre><code>{
   "name": "example-inherit",
   "version": "0.1.0",
-  "description": "A apiDoc inherit example"
+  "description": "A apiDoc 继承实例"
 }</code></pre>
 		<p><br></p>
 
@@ -573,16 +573,16 @@ This is a comment.
 	<article id="param-api">
 		<h2>@api</h2>
 		<pre><code>@api {method} path [title]</code></pre>
-		<p><strong>Required!</strong></p>
+		<p><strong>必须地!</strong></p>
 		<p>Without that indicator, apiDoc parser ignore the documentation block.</p>
 		<p>Except definition blocks like <code>@apiDefineStructure</code>, they not need <code>@api</code>.</p>
-		<p>Usage: <code>@api {get} /user/:id Users unique ID.</code></p>
+		<p>用法: <code>@api {get} /user/:id Users unique ID.</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -604,7 +604,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  */</code></pre>
@@ -617,13 +617,13 @@ This is a comment.
 		<pre><code>@apiDefineErrorStructure name</code></pre>
 		<p>Defines a documentation block as a draft to be used in normal <code>@api</code> blocks.</p>
 		<p>Should be used to define Error Parameters, like <code>@apiError</code>, <code>@apiErrorExample</code>.</p>
-		<p>Usage: <code>@apiDefineErrorStructure MyError</code></p>
+		<p>用法: <code>@apiDefineErrorStructure MyError</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -637,7 +637,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @apiDefineErrorStructure MyError
  * @apiError UserNotFound The &lt;code&gt;id&lt;/code&gt; of the User was not found.
@@ -647,7 +647,7 @@ This is a comment.
  * @api {get} /user/:id
  * @apiErrorStructure MyError
  */</code></pre>
-		<p>For more watch <a href="#example-inherit">inherit example</a>.</p>
+		<p>更多查看<a href="#example-inherit">继承实例</a>.</p>
 	</article>
 	
 <!-- ============================================================ -->
@@ -657,13 +657,13 @@ This is a comment.
 		<pre><code>@apiDefinePermission name [title]
                      [description]</code></pre>
 		<p>Defines a permission as a draft to be used in normal <code>@api</code> blocks.</p>
-		<p>Usage: <code>@apiDefinePermission admin</code></p>
+		<p>用法: <code>@apiDefinePermission admin</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -689,7 +689,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @apiDefinePermission admin Admin access rights needed. 
  * Optionally you can write here further Informations about the permission.
@@ -708,13 +708,13 @@ This is a comment.
 		<pre><code>@apiDefineStructure name</code></pre>
 		<p>Defines a documentation block as a draft to be used in normal <code>@api</code> blocks.</p>
 		<p>Should be used to define normal Parameters, like <code>@apiParam</code>, <code>@apiExample</code></p>
-		<p>Usage: <code>@apiDefineStructure MyName</code></p>
+		<p>用法: <code>@apiDefineStructure MyName</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -728,7 +728,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @apiDefineStructure MyName
  * @apiParam {Number} id Users unique ID.
@@ -738,7 +738,7 @@ This is a comment.
  * @api {get} /user/:id
  * @apiStructure MyName
  */</code></pre>
-		<p>For more watch <a href="#example-inherit">inherit example</a>.</p>
+		<p>更多查看<a href="#example-inherit">继承实例</a>.</p>
 	</article>
 
 <!-- ============================================================ -->
@@ -748,13 +748,13 @@ This is a comment.
 		<pre><code>@apiDefineSuccessStructure name</code></pre>
 		<p>Defines a documentation block as a draft to be used in normal <code>@api</code> blocks.</p>
 		<p>Should be used to define Success Parameters, like <code>@apiSuccess</code>, <code>@apiSuccessExample</code>.</p>
-		<p>Usage: <code>@apiDefineSuccessStructure MySuccess</code></p>
+		<p>用法: <code>@apiDefineSuccessStructure MySuccess</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -768,7 +768,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @apiDefineSuccessStructure MySuccess
  * @apiSuccess {String} firstname Firstname of the User.
@@ -778,7 +778,7 @@ This is a comment.
  * @api {get} /user/:id
  * @apiSuccessStructure MySuccess
  */</code></pre>
-		<p>For more watch <a href="#example-inherit">inherit example</a>.</p>
+		<p>更多查看<a href="#example-inherit">继承实例</a>.</p>
 	</article>
 
 <!-- ============================================================ -->
@@ -787,13 +787,13 @@ This is a comment.
 		<h2>@apiDescription</h2>
 		<pre><code>@apiDescription text</code></pre>
 		<p>Detailed description of the API Method.</p>
-		<p>Usage: <code>@apiDescription This is the Description.</code></p>
+		<p>用法: <code>@apiDescription This is the Description.</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -804,7 +804,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @apiDescription This is the Description.
  * It is multiline capable.
@@ -820,13 +820,13 @@ This is a comment.
 		<h2>@apiError</h2>
 		<pre><code>@apiError [(group)] [{type}] field [description]</code></pre>
 		<p>Error return Parameter.</p>
-		<p>Usage: <code>@apiError UserNotFound</code></p>
+		<p>用法: <code>@apiError UserNotFound</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -859,7 +859,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiError UserNotFound The &lt;code&gt;id&lt;/code&gt; of the User was not found.
@@ -873,13 +873,13 @@ This is a comment.
 		<pre><code>@apiErrorTitle (group) description</code></pre>
 		<p>Replace the short group-name with a description</p>
 		<p><strong>Global usage, use it once, no versioning. Optional.</strong></p>
-		<p>Usage: <code>@apiErrorTitle (MyGroup) This are the Parameters for MyGroup:</code></p>
+		<p>用法: <code>@apiErrorTitle (MyGroup) This are the Parameters for MyGroup:</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -898,7 +898,7 @@ This is a comment.
 			</tbody>
 		</table>
 
-		<p>Examples:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {post} /user/
  *
@@ -928,13 +928,13 @@ Example without @apiErrorTitle:
 		<pre><code>@apiErrorExample [title]
                  example</code></pre>
 		<p>Example of an error return message, output as a pre-formatted code.</p>
-		<p>Usage: <code>@apiErrorExample Error-Response:<br>                 This is an example.</code></p>
+		<p>用法: <code>@apiErrorExample Error-Response:<br>                 This is an example.</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -953,7 +953,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiErrorExample Error-Response:
@@ -970,13 +970,13 @@ Example without @apiErrorTitle:
 		<h2>@apiErrorStructure</h2>
 		<pre><code>@apiErrorStructure name</code></pre>
 		<p>Include a with <code>@apiDefineErrorStructure</code> defined block. If work with <code>@apiVersion</code> the same or nearest predecessor will be included.</p>
-		<p>Usage: <code>@apiErrorStructure MyError</code></p>
+		<p>用法: <code>@apiErrorStructure MyError</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -989,7 +989,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiErrorStructure MyError
@@ -1003,13 +1003,13 @@ Example without @apiErrorTitle:
 		<pre><code>@apiExample [title]
             example</code></pre>
 		<p>Example for usage of an API method. Output as a pre-formatted code.</p>
-		<p>Usage: <code>@apiExample Example usage:<br>            This is an example.</code></p>
+		<p>用法: <code>@apiExample Example 用法:<br>            This is an example.</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1028,10 +1028,10 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
- * @apiExample Example usage:
+ * @apiExample Example 用法:
  *     curl -i http://localhost/user/4711
  */</code></pre>
 	</article>
@@ -1041,15 +1041,15 @@ Example without @apiErrorTitle:
 	<article id="param-api-group">
 		<h2>@apiGroup</h2>
 		<pre><code>@apiGroup name</code></pre>
-		<p><strong>Should always be used.</strong></p>
+		<p><strong>应始终使用.</strong></p>
 		<p>Defines to which group the method documentation block belongs. Groups will be used for the Main-Navigation in the generated output. Structure definition not need <code>@apiGroup</code>.</p>
-		<p>Usage: <code>@apiGroup User</code></p>
+		<p>用法: <code>@apiGroup User</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1062,7 +1062,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiGroup User
@@ -1076,13 +1076,13 @@ Example without @apiErrorTitle:
 		<pre><code>@apiIgnore [hint]</code></pre>
 		<p><strong>Place it on top of a block.</strong></p>
 		<p>A block with <code>@apiIgnore</code> will not be parsed. It is usefull, if you leave outdated or not finished Methods in your source code and you don't want to publish it into the documentation.</p>
-		<p>Usage: <code>@apiIgnore Not finished Method</code></p>
+		<p>用法: <code>@apiIgnore Not finished Method</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1095,7 +1095,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @apiIgnore Not finished Method
  * @api {get} /user/:id
@@ -1107,15 +1107,15 @@ Example without @apiErrorTitle:
 	<article id="param-api-name">
 		<h2>@apiName</h2>
 		<pre><code>@apiName name</code></pre>
-		<p><strong>Should always be used.</strong></p>
+		<p><strong>应始终使用.</strong></p>
 		<p>Defines the name of the method documentation block. Names will be used for the Sub-Navigation in the generated output. Structure definition not need <code>@apiName</code>.</p>
-		<p>Usage: <code>@apiName GetUser</code></p>
+		<p>用法: <code>@apiName GetUser</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1130,7 +1130,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiName GetUser
@@ -1143,13 +1143,13 @@ Example without @apiErrorTitle:
 		<h2>@apiParam</h2>
 		<pre><code>@apiParam [(group)] [{type}] [field=defaultValue] [description]</code></pre>
 		<p>Describe a parameter passed to you API-Method.</p>
-		<p>Usage: <code>@apiParam (MyGroup) {Number} id Users unique ID.</code></p>
+		<p>用法: <code>@apiParam (MyGroup) {Number} id Users unique ID.</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1194,7 +1194,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Examples:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiParam {Number} id Users unique ID.
@@ -1221,13 +1221,13 @@ Example without @apiErrorTitle:
 		<pre><code>@apiParamTitle (group) description</code></pre>
 		<p>Replace the short group-name with a description</p>
 		<p><strong>Global usage, use it once, no versioning. Optional.</strong></p>
-		<p>Usage: <code>@apiParamTitle (MyGroup) This are the Parameters for MyGroup:</code></p>
+		<p>用法: <code>@apiParamTitle (MyGroup) This are the Parameters for MyGroup:</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1246,7 +1246,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Examples:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {post} /user/
  *
@@ -1276,13 +1276,13 @@ Example without @apiParamTitle:
 		<h2>@apiPermission</h2>
 		<pre><code>@apiPermission name</code></pre>
 		<p>Outputs the permission name. If the name is defined with <code>@apiDefinePermission</code> the generated documentation include the additional title and description.</p>
-		<p>Usage: <code>@apiPermission admin</code></p>
+		<p>用法: <code>@apiPermission admin</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1295,7 +1295,7 @@ Example without @apiParamTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiPermission none
@@ -1308,13 +1308,13 @@ Example without @apiParamTitle:
 		<h2>@apiStructure</h2>
 		<pre><code>@apiStructure name</code></pre>
 		<p>Include a with <code>@apiDefineStructure</code> defined block. If work with <code>@apiVersion</code> the same or nearest predecessor will be included.</p>
-		<p>Usage: <code>@apiStructure MyStructure</code></p>
+		<p>用法: <code>@apiStructure MyStructure</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1327,7 +1327,7 @@ Example without @apiParamTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiStructure MyStructure
@@ -1340,13 +1340,13 @@ Example without @apiParamTitle:
 		<h2>@apiSuccess</h2>
 		<pre><code>@apiSuccess [(group)] [{type}] field [description]</code></pre>
 		<p>Success return Parameter.</p>
-		<p>Usage: <code>@apiSuccess {String} firstname Firstname of the User.</code></p>
+		<p>用法: <code>@apiSuccess {String} firstname Firstname of the User.</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1379,7 +1379,7 @@ Example without @apiParamTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiSuccess {String} firstname Firstname of the User.
@@ -1393,7 +1393,7 @@ Example without @apiParamTitle:
  * @apiSuccess (200) {String} lastname  Lastname of the User.
  */</code></pre>
 
-		<p>Example with Object:</p>
+		<p>使用对象例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiSuccess {Boolean} active        Specify if the account is active. 
@@ -1402,7 +1402,7 @@ Example without @apiParamTitle:
  * @apiSuccess {String}  profile.image Avatar-Image.
  */</code></pre>
 
-		<p>Example with Array:</p>
+		<p>使用数组例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /users
  * @apiSuccess {Object[]} profiles       List of user profiles.
@@ -1418,13 +1418,13 @@ Example without @apiParamTitle:
 		<pre><code>@apiSuccessTitle (group) description</code></pre>
 		<p>Replace the short group-name with a description</p>
 		<p><strong>Global usage, use it once, no versioning. Optional.</strong></p>
-		<p>Usage: <code>@apiSuccessTitle (MyGroup) This are the Parameters for MyGroup:</code></p>
+		<p>用法: <code>@apiSuccessTitle (MyGroup) This are the Parameters for MyGroup:</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1443,7 +1443,7 @@ Example without @apiParamTitle:
 			</tbody>
 		</table>
 
-		<p>Examples:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {post} /user/
  * @apiSuccessTitle (All) 200 - Data for all users:
@@ -1476,13 +1476,13 @@ Example without @apiErrorTitle:
 		<pre><code>@apiSuccessExample [title]
                    example</code></pre>
 		<p>Example of a success return message, output as a pre-formatted code.</p>
-		<p>Usage: <code>@apiSuccessExample Success-Response:<br>                   This is an example.</code></p>
+		<p>用法: <code>@apiSuccessExample Success-Response:<br>                   This is an example.</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1501,7 +1501,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiSuccessExample Success-Response:
@@ -1519,13 +1519,13 @@ Example without @apiErrorTitle:
 		<h2>@apiSuccessStructure</h2>
 		<pre><code>@apiSuccessStructure name</code></pre>
 		<p>Include a with <code>@apiDefineSuccessStructure</code> defined block. If work with <code>@apiVersion</code> the same or nearest predecessor will be included.</p>
-		<p>Usage: <code>@apiSuccessStructure MySuccess</code></p>
+		<p>用法: <code>@apiSuccessStructure MySuccess</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1538,7 +1538,7 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiSuccessStructure MySuccess
@@ -1552,13 +1552,13 @@ Example without @apiErrorTitle:
 		<pre><code>@apiVersion version</code></pre>
 		<p>Set the version of an documentation block. Version can also be defined in <code>@apDefineErrorStructure</code>, <code>@apDefinePermission</code>, <code>@apDefineStructure</code> and <code>@apDefineSuccessStructure</code>.</p>
 		<p>Blocks with same group and name, but different versions can be compared in the generated output, so you or a frontend developer can retrace what changes in the API since the last version.</p>
-		<p>Usage: <code>@apiVersion 1.6.2</code></p>
+		<p>用法: <code>@apiVersion 1.6.2</code></p>
 
 		<table>
 			<thead>
 			<tr>
-				<th>Name</th>
-				<th>Description</th>
+				<th>名称</th>
+				<th>描述</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -1571,12 +1571,12 @@ Example without @apiErrorTitle:
 			</tbody>
 		</table>
 
-		<p>Example:</p>
+		<p>例子:</p>
 		<pre class="example"><code>/**
  * @api {get} /user/:id
  * @apiVersion 1.6.2
  */</code></pre>
- 		<p>For more watch <a href="#example-versioning">versioning example</a>.</p>
+ 		<p>更多查看<a href="#example-versioning">版本实例</a>.</p>
 	</article>
 
 <!-- ============================================================ -->
