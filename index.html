@@ -124,20 +124,20 @@
 	<aside>
 		<nav class="nav-main" role="navigation">
 			<ul role="list">
-				<li role="listitem" class="nav-header"><a href="#getting-started">Getting started</a></li>
-				<li role="listitem"><a href="#preface">Preface</a></li>
-				<li role="listitem"><a href="#install">Install</a></li>
-				<li role="listitem"><a href="#run">Run</a></li>
-				<li role="listitem"><a href="#configure">Configure</a></li>
-				<li role="listitem"><a href="#grunt-module">GRUNT Module</a></li>
-				<li role="listitem"><a href="#template">Template</a></li>
-				<li role="listitem"><a href="#extend">Extend</a></li>
-				<li role="listitem" class="nav-header"><a href="#examples">Examples</a></li>
-				<li role="listitem"><a href="#example-basic">Basic</a></li>
-				<li role="listitem"><a href="#example-inherit">Inherit</a></li>
-				<li role="listitem"><a href="#example-versioning">Versioning</a></li>
-				<li role="listitem"><a href="#example-full">Full example (all together)</a></li>
-				<li role="listitem" id="nav-main-params" class="nav-header"><a href="#params">apiDoc-Params</a></li>
+				<li role="listitem" class="nav-header"><a href="#getting-started">入门</a></li>
+				<li role="listitem"><a href="#preface">前言</a></li>
+				<li role="listitem"><a href="#install">安装</a></li>
+				<li role="listitem"><a href="#run">运行</a></li>
+				<li role="listitem"><a href="#configure">配置</a></li>
+				<li role="listitem"><a href="#grunt-module">GRUNT模块</a></li>
+				<li role="listitem"><a href="#template">模板</a></li>
+				<li role="listitem"><a href="#extend">扩展</a></li>
+				<li role="listitem" class="nav-header"><a href="#examples">实例</a></li>
+				<li role="listitem"><a href="#example-basic">基础</a></li>
+				<li role="listitem"><a href="#example-inherit">继承</a></li>
+				<li role="listitem"><a href="#example-versioning">版本</a></li>
+				<li role="listitem"><a href="#example-full">完整的例子（一起）</a></li>
+				<li role="listitem" id="nav-main-params" class="nav-header"><a href="#params">apiDoc-参数</a></li>
 				<li role="listitem"><a href="#param-api">@api</a></li>
 				<li role="listitem"><a href="#param-api-define-error-structure">@apiDefineErrorStructure</a></li>
 				<li role="listitem"><a href="#param-api-define-permission">@apiDefinePermission</a></li>
@@ -168,14 +168,14 @@
 
 <!--
  /* ============================================================
-  * Getting started
+  * 入门
   * ============================================================ */
 -->
 <section id="getting-started">
-	<h1>Getting started</h1>
+	<h1>入门</h1>
 
 	<article id="preface">
-		<h2>Preface</h2>
+		<h2>前言</h2>
 		<p>All examples in this document use the <strong>Javadoc-Style</strong> (can be used in C#, Go, Dart, Java, JavaScript, PHP, TypeScript and all other Javadoc capable languages):</p>
 		<pre class="example"><code>/**
  * This is a comment.
@@ -205,19 +205,19 @@ This is a comment.
 	</article>
 
 	<article id="install">
-		<h2>Install</h2>
+		<h2>安装</h2>
 		<pre><code>npm install apidoc -g</code></pre>
 	</article>
 
 	<article id="run">
-		<h2>Run</h2>
+		<h2>运行</h2>
 		<pre><code>apidoc -i myapp/ -o apidoc/ -t mytemplate/</code></pre>
 		<p>Creates an apiDoc of all files within dir <code>myapp/</code>, uses template from dir <code>mytemplate/</code> and put all output to dir <code>apidoc/</code>.</p>
 		<p>Without any parameter, apiDoc generate a documentation from all <code>.cs</code> <code>.dart</code> <code>.erl</code> <code>.go</code> <code>.java</code> <code>.js</code> <code>.php</code> <code>.py</code> <code>.rb</code> <code>.ts</code> files in current dir (incl. subdirs) and writes the output to <code>./doc/</code>.</p>
 	</article>
 
 	<article id="configure">
-		<h2>Configure</h2>
+		<h2>配置</h2>
 		<p>Show command line parameters:</p>
 		<pre><code>apidoc -h</code></pre>
 
@@ -274,7 +274,7 @@ This is a comment.
 	</article>
 
 	<article id="grunt-module">
-		<h2>GRUNT Module</h2>
+		<h2>GRUNT模块</h2>
 		<p>
 			A separate grunt module is supported, visit <a href="https://github.com/apidoc/grunt-apidoc">github.com/apidoc/grunt-apidoc</a><br>
 			or install via npm:
@@ -283,7 +283,7 @@ This is a comment.
 	</article>
 
 	<article id="template">
-		<h2>Template</h2>
+		<h2>模板</h2>
 		<p>apiDoc include 2 similar templates. Both templates use <a href="http://handlebarsjs.com">handlebars</a>, <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, <a href="http://requirejs.org/">RequireJS</a> and <a href="http://jquery.com">jQuery</a> for the output of the generated <code>api_data.js</code> and <code>api_project.js</code> as html-page.</p>
 
 		<h3>default (complex with versioning and compare)</h3>
@@ -294,18 +294,18 @@ This is a comment.
 		</ul>
 		<p><a href="example/">view default demo</a></p> 
 		
-		<h3>basic</h3>
+		<h3>基础</h3>
 		<p>Only view the latest Data of your API (simpler template and less js).</p>
 		<p>Use with the full path to apiDoc: <code>apidoc -t /usr/local/lib/node_modules/apidoc/template_basic/</code></p>
 		<p><a href="example_basic/">view basic demo</a></p>
 
-		<h3>Create your own</h3>
+		<h3>创建你自己的</h3>
 		<p>The basic Template is a good place to start and study the template usage.</p>
 		<p>You can create your own template and use the apiDoc generated files <code>api_data.js</code>, <code>api_project.js</code>, or json only files <code>api_data.json</code>, <code>api_project.json</code>.</p>
 	</article>
 
 	<article id="extend">
-		<h2>Extend</h2>
+		<h2>扩展</h2>
 		<p>apiDoc can be extended with own parameters (if you miss something). Look at the <code>lib/plugins/</code> dir for examples. <code>parser</code> split the parameter data, <code>worker</code> processes additional functions with all found data and <code>filter</code> reduce the data to needed things.</p>
 		<p>Example usage: <code>apidoc --parse-filters myFilter=pathToMyFilter/myFilter.js</code></p>
 		<p>Or easier: <a href="https://github.com/apidoc/apidoc">fork</a> the whole project ;-)</p>
@@ -318,7 +318,7 @@ This is a comment.
   * ============================================================ */
 -->
 <section id="examples">
-	<h1>Examples</h1>
+	<h1>实例</h1>
 	
 	<p>An introduction Presentation with a small example can be found at <a href="https://speakerdeck.com/rottmann/api-documentation" target="_blank" title="Introduction with a small example">speakerdeck.com</a>.</p>
 
@@ -377,7 +377,7 @@ This is a comment.
 <!-- ============================================================ -->
 
 	<article id="example-inherit">
-		<h2>Inherit</h2>
+		<h2>继承</h2>
 		<p>Inherit mean, that you can define parts of your documentation that shall be used many times.</p>
 		<p><a href="example_inherit/">View example output</a></p>
 		<p><br></p>
@@ -453,7 +453,7 @@ This is a comment.
 <!-- ============================================================ -->
 
 	<article id="example-versioning">
-		<h2>Versioning</h2>
+		<h2>版本</h2>
 		<p>Nice feature is the keeping of previous defined documentation blocks. That makes it possible to compare a methods version with its predecessor. Frontend Developer can thus simply see what have changed and modify their code.</p>
 		<p><a href="example_versioning/">View example output</a></p>
 		<p>In the example, click top right on select box (the main version) and select <code>Compare all with predecessor</code>.</p>
@@ -539,7 +539,7 @@ This is a comment.
 <!-- ============================================================ -->
 
 	<article id="example-full">
-		<h2>Full example (all together)</h2>
+		<h2>完整的例子（一起）</h2>
 		<p>This is a complex example with <code>inherit</code>, <code>versioning</code>, <code>API.md</code> file and history file <code>_apidoc.js</code>, explanation is within code and generated documentation.</p>
 		<p><a href="example/">View example output</a></p>
 		<p><br></p>
@@ -559,8 +559,8 @@ This is a comment.
   * ============================================================ */
 -->
 <section id="params">
-	<h1>apiDoc-Params</h1>
-	<p>	Structure Params like:</p>
+	<h1>apiDoc-参数</h1>
+	<p>	Structure Params如:</p>
 	<ul role="list">
 		<li role="listitem"><code>@apiDefineErrorStructure</code></li>
 		<li role="listitem"><code>@apiDefinePermission</code></li>
